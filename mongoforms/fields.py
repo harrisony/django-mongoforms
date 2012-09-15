@@ -154,3 +154,9 @@ class MongoFormFieldGenerator(object):
         return ReferenceField(
             field.document_type.objects,
             label=label)
+
+    def generate_filefield(self, field_name, field, label):
+        return forms.FileField(
+            label=label,
+            required=field.required,
+            )
